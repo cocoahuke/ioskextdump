@@ -1,5 +1,5 @@
 CC=clang
-CFLAGS=-fobjc-arc -fobjc-link-runtime -lreadline -framework Foundation src/libcapstone.a
+CFLAGS=-fobjc-arc -fobjc-link-runtime -framework Foundation src/libcapstone.a
 
 build/ioskextdump:
 	mkdir -p build;
