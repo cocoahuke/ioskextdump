@@ -32,9 +32,9 @@ make install
 ```
 Usage: ioskextdump [-e] [-p <access directory path>] <kernelcache>
 ```
-`-e` Specify the export mode
-`-p` Specifiy a folder path that contains the data file or export data file to there
-<br>
+`-e` Specify the export mode  
+`-p` Specifiy a folder path that contains the data file or export data file to there  
+<br>  
 **Example to use**
 I left a sample iOS8.3 kernelcache in the test directory, try to run this command  
 ```
