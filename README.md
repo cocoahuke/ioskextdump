@@ -19,8 +19,7 @@ And also will determine structure of `IOExternalMethodDispatch` if its a Usercli
 
 **Download**
 ```bash
-git clone https://github.com/cocoahuke/ioskextdump.git
-&& cd ioskextdump
+git clone https://github.com/cocoahuke/ioskextdump.git && cd ioskextdump
 ```
 **Compile and install** to /usr/local/bin/
 
