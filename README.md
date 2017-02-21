@@ -14,6 +14,9 @@ So it needs to execute twice to get the inheritance order of all classes, first 
 And also will determine structure of `IOExternalMethodDispatch` if its a Userclient class, but many classes implements their own externalMethod, didn’t use any `IOExternalMethodDispatch`, `IOExternalMethod` or `IOExternalTrap`
  So still need lots of manual analysis to find interface of Kext
 
+###For kernel which dump from memory
+Use [iosdumpkernelfix](https://github.com/cocoahuke/iosdumpkernelfix) to correct the Mach-O header before analyze it, Otherwise The analysis results are not complete list of Kexts
+
 # How to use
 
 **Download**
