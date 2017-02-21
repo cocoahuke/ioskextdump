@@ -1,5 +1,5 @@
 # ioskextdump
-Dump Kext information from iOS kernel cache. Applicable to the kernel of dump from kernel. The disassembly framework used is [Capstone](http://www.capstone-engine.org/)
+Dump Kext information from iOS kernel cache. Applicable to the kernel dump from memory. The disassembly framework used is [Capstone](http://www.capstone-engine.org/)
 
 [![Contact](https://img.shields.io/badge/contact-@cocoahuke-fbb52b.svg?style=flat)](https://twitter.com/cocoahuke) [![build](https://travis-ci.org/cocoahuke/ioskextdump.svg?branch=master)](https://travis-ci.org/cocoahuke/ioskextdump) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/cocoahuke/ioskextdump/blob/master/LICENSE) [![paypal](https://img.shields.io/badge/Donate-PayPal-039ce0.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EQDXSYW8Z23UY)
 
