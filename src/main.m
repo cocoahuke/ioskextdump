@@ -2649,7 +2649,7 @@ void ParseConstFunc(char **cn,uint64_t class_self,uint64_t class_super,void *bin
                 }
                 
                 if(*own_func!=cur_func->func_vm){
-                    printf("overwrite: %s loc:0x%llx imp:0x%llx\n",cur_func->func_name,vtable_start + cur_func->func_offset,*own_func);
+                    printf("override: %s loc:0x%llx imp:0x%llx\n",cur_func->func_name,vtable_start + cur_func->func_offset,*own_func);
                     //下面处理各别被重写函数,也是添加代码区,就是比如想过滤重写了某个重要函数的类
                 }
                 
@@ -2674,7 +2674,7 @@ void ParseConstFunc(char **cn,uint64_t class_self,uint64_t class_super,void *bin
                 }
                 
                 if(*own_func!=cur_func->func_vm){
-                    printf("overwrite: %s loc:0x%llx imp:0x%llx\n",cur_func->func_name,vtable_start + cur_func->func_offset,*own_func);
+                    printf("override: %s loc:0x%llx imp:0x%llx\n",cur_func->func_name,vtable_start + cur_func->func_offset,*own_func);
                     //下面处理各别被重写函数,也是添加代码区,就是比如想过滤重写了某个重要函数的类
                     int needAdd_MK_NEW_USERCLIENT = 0;
                     if(!strcmp(cur_func->func_name,"IOService_newUserClientWithOSDic")){

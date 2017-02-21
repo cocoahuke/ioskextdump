@@ -60,9 +60,10 @@ x3:0xfc8
 vtable start from addr 0xffffff801ce8bb70
 Inheritance relationship: IOAccelContext2->IOAccelSubmitter2->IOUserClient->IOService->IORegistryEntry->OSObject
 
-overwrite: IOUserClient_IOUserClient loc:0xffffff801ce8bb70 imp:0xffffff801ce66818
-overwrite: IOUserClient_~IOUserClient loc:0xffffff801ce8bb78 imp:0xffffff801ce6681c
-overwrite: IOUserClient_getMetaClass loc:0xffffff801ce8bba8 imp:0xffffff801ce66834
-overwrite: IOUserClient_free loc:0xffffff801ce8bbd8 imp:0xffffff801ce68618
+override: IOUserClient_IOUserClient loc:0xffffff801ce8bb70 imp:0xffffff801ce66818
+override: IOUserClient_~IOUserClient loc:0xffffff801ce8bb78 imp:0xffffff801ce6681c
+override: IOUserClient_getMetaClass loc:0xffffff801ce8bba8 imp:0xffffff801ce66834
+override: IOUserClient_free loc:0xffffff801ce8bbd8 imp:0xffffff801ce68618
 ...
 ```
+Any question just Email me
