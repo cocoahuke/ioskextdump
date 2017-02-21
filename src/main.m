@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#include <capstone/capstone.h>
+#include "capstone/capstone.h"
 #include <mach-o/loader.h>
 #include <mach-o/fat.h>
 #include <stdlib.h>
