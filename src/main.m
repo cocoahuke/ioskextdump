@@ -943,9 +943,9 @@ char *KextGetBundleID(void *bin){
     //printf("\n__DATA is 0x%llx-0x%llx\n",dataSecStart,dataSecStart+dataSecSize);
     
     char mh_Magic[] = {'c','o','m','.'};
-    uint64_t per_mh = (uint64_t)memmem(bin+dataSecStart,dataSecSize,mh_Magic,0x4);
+    char* per_mh = memmem(bin+dataSecStart,dataSecSize,mh_Magic,0x4);
     if(per_mh){
-        return (char*)per_mh;
+        return per_mh;
     }
     return "******WRONG_KEXT_NAME******";
 }
