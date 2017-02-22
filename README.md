@@ -6,7 +6,7 @@ Dump Kext information from iOS kernel cache. Applicable to the kernel which dump
 
 Analyze kernel extension information from iOS kernel cache with arm instructions and extract information, information including the basic IOKit classes construction parameters, inheritance relationship of the IOKit class and subclass methods override.
 
-I finished this dirty project a year ago. Have been tested at iOS8& (32bit iOS9) kernel cache, Does not support iOS10, iOS10 Kext format has some changing, For example, sections of kernel cache is changed `__DATA -> __DATA_CONST`. I haven't studied the kernel of iOS10 yet because I spend time to learn something else
+I finished this dirty project a year ago. Have been tested at iOS8& (64bit iOS9) kernel cache, Does not support iOS10, iOS10 Kext format has some changing, For example, sections of kernel cache is changed `__DATA -> __DATA_CONST`. I haven't studied the kernel of iOS10 yet because I spend time to learn something else
 
 The project will begin from `__DATA.__ mod_init_func` as start point. Get all basic IOKit class construction functions first, and then export Kexts from `__PRELINK_TEXT.__text` one by one. According to basic IOKit classes’s VM address get a different inheritance relationship of IOKit classes of Kexts so this program could analyze different table and compare to its superclass, The result obtained is determine which functions this IOKit class override.
 So it needs to execute twice to get the inheritance order of all classes, first time was record information
