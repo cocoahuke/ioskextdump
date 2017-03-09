@@ -1336,7 +1336,7 @@ void AnalysisModInitOfKernel(char *kr_path){
                             uint64_t *mem = getMemFromAddrOfVM(kr_bin,curFunc_FilebaseAddr,curFunc_VMbaseAddr,vm_addr);
                             
                             if(!check_PointerAddrInVM((uint64_t)mem)){
-                                printf("0x%llx 指针指向位置在虚拟内存外,跳过该指令\n",insn[j].address);
+                                printf("0x%llx pointer was point to outside of virtual memory, skip analysis this command\n",insn[j].address);
                                 continue;
                             }
                             
@@ -1386,7 +1386,7 @@ void AnalysisModInitOfKernel(char *kr_path){
                     uint64_t *mem = getMemFromAddrOfVM(kr_bin,curFunc_FilebaseAddr,curFunc_VMbaseAddr,(*xx + offset));
                     
                     if(!check_PointerAddrInVM((uint64_t)mem)){
-                        printf("0x%llx 指针指向位置在虚拟内存外,跳过该指令\n",insn[j].address);
+                        printf("0x%llx pointer was point to outside of virtual memory, skip analysis this command\n",insn[j].address);
                         continue;
                     }
                     
@@ -1732,7 +1732,7 @@ void AnalysisModInitOfKEXT(void *bin){
                             uint64_t *mem = getMemFromAddrOfVM(bin,curFunc_FilebaseAddr,curFunc_VMbaseAddr,vm_addr);
                             
                             if(!check_PointerAddrInVM((uint64_t)mem)){
-                                printf("0x%llx 指针指向位置在虚拟内存外,跳过该指令\n",insn[j].address);
+                                printf("0x%llx pointer was point to outside of virtual memory, skip analysis this command\n",insn[j].address);
                                 continue;
                             }
                             
@@ -1782,7 +1782,7 @@ void AnalysisModInitOfKEXT(void *bin){
                     uint64_t *mem = getMemFromAddrOfVM(bin,curFunc_FilebaseAddr,curFunc_VMbaseAddr,(*xx + offset));
                     
                     if(!check_PointerAddrInVM((uint64_t)mem)){
-                        printf("0x%llx 指针指向位置在虚拟内存外,跳过该指令\n",insn[j].address);
+                        printf("0x%llx pointer was point to outside of virtual memory, skip analysis this command\n",insn[j].address);
                         continue;
                     }
                     
@@ -1863,10 +1863,9 @@ void FindKEXTsThenAnalysis(char *kr_path){
             //printf("%d.macho:0x%llx %s\n",i,per_mh,kext_id);
             //if(!strcmp(kext_id,"com.apple.iokit.IOHIDFamily"))
             
-            //下面的几行代码
-            uint64_t kext_start = machoGetVMAddr(per_mh,"__TEXT",NULL);
-            uint64_t kext_end = machoGetVMAddr(per_mh,"__LINKEDIT",NULL) + machoGetSize(per_mh,"__LINKEDIT",NULL);
-            uint64_t target_vm = 0xffffff801bff18d8; //target_vm为目标内存地址
+            uint64_t kext_start = machoGetVMAddr((void*)per_mh,"__TEXT",NULL);
+            uint64_t kext_end = machoGetVMAddr((void*)per_mh,"__LINKEDIT",NULL) + machoGetSize(per_mh,"__LINKEDIT",NULL);
+            uint64_t target_vm = 0xffffff801bff18d8; //target_vm为目标内存地址ps:编写时的搜索功能
             printf("%d.0x%llx - 0x%llx %s\n",i,kext_start,kext_end,kext_id);
             
             if(target_vm>=kext_start&&target_vm<=kext_end){
@@ -2014,7 +2013,7 @@ uint64_t GetR12JumpFromAnalysis(void* bin,uint64_t tar_VMAddr,uint64_t tar_fileo
                         uint64_t *mem = getMemFromAddrOfVM(bin,tar_fileoff,tar_VMAddr,*xx);
                         
                         if(!check_PointerAddrInVM((uint64_t)mem)){
-                            printf("0x%llx 指针指向位置在虚拟内存外,跳过该指令\n",insn[j].address);
+                            printf("0x%llx pointer was point to outside of virtual memory, skip analysis this command\n",insn[j].address);
                             continue;
                         }
                         
@@ -2628,7 +2627,6 @@ void ParseConstFunc(char **cn,uint64_t class_self,uint64_t class_super,void *bin
         
 #pragma mark edit:判断类重写的函数
         //判断重写的函数
-        printf("\n");
         if(frIOUserClient){
             
             /*int count = sizeof(struct userclient_funcList)/sizeof(struct vtable_func);
