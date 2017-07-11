@@ -739,7 +739,7 @@ uint64_t machoGetVMAddr(uint8_t firstPage[4096],char *segname,char *sectname){
                     
                 }
                 
-            }
+            } break;
             case LC_SEGMENT:
             {
                 struct segment_command *seg = (struct segment_command*)cmd;
@@ -817,7 +817,7 @@ uint64_t machoGetFileAddr(uint8_t firstPage[4096],char *segname,char *sectname){
                     
                 }
                 
-            }
+            } break;
             case LC_SEGMENT:
             {
                 struct segment_command *seg = (struct segment_command*)cmd;
@@ -894,7 +894,7 @@ uint64_t machoGetSize(uint8_t firstPage[4096],char *segname,char *sectname){
                     
                 }
                 
-            }
+            } break;
             case LC_SEGMENT:
             {
                 struct segment_command *seg = (struct segment_command*)cmd;
