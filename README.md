@@ -3,9 +3,9 @@ Dump Kext information from iOS kernel cache. Applicable to the kernel which dump
 
 [![Contact](https://img.shields.io/badge/contact-@cocoahuke-fbb52b.svg?style=flat)](https://twitter.com/cocoahuke) [![build](https://travis-ci.org/cocoahuke/ioskextdump.svg?branch=master)](https://travis-ci.org/cocoahuke/ioskextdump) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/cocoahuke/ioskextdump/blob/master/LICENSE) [![paypal](https://img.shields.io/badge/Donate-PayPal-039ce0.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EQDXSYW8Z23UY)
 
-###32bit version of iOS:
+##### 32bit version of iOS:
 **32bit(arm):  [ioskextdump_32](https://github.com/cocoahuke/ioskextdump_32)**
-###Dump Kext info For Mac:
+##### Dump Kext info For Mac:
 **64bit(x86_64):  [mackextdump](https://github.com/cocoahuke/mackextdump)**
 
 Analyze kernel extension information from iOS kernel cache with arm instructions and extract information, information including the basic IOKit classes construction parameters, inheritance relationship of the IOKit class and subclass methods override.
