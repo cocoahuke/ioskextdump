@@ -5,6 +5,8 @@ Dump Kext information from iOS kernel cache. Applicable to the kernel which dump
 
 ##### 32bit version of iOS:
 **32bit(arm):  [ioskextdump_32](https://github.com/cocoahuke/ioskextdump_32)**
+##### 64bit version of iOS10:
+**64bit(arm):  [ioskextdump_ios10](https://github.com/cocoahuke/ioskextdump_ios10)**
 ##### Dump Kext info For Mac:
 **64bit(x86_64):  [mackextdump](https://github.com/cocoahuke/mackextdump)**
 
